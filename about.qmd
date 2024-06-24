@@ -1,0 +1,7 @@
+---
+title: "About"
+---
+
+Author: Melody Liu (melody.yuemeng.liu@gmail.com)
+[Github repo](https://github.com/mliu-13/plastic-pollution)
+[Kane's Free Data Science Course](https://bootcamp.davidkane.info/)
