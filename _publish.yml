@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: f8cd7789-cb24-44ca-8ccd-ea949f5f9960
+      url: 'https://mliu.quarto.pub/plastic-pollution'

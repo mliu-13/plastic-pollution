@@ -1,0 +1,54 @@
+---
+title: "Global Plastics Production"
+execute: 
+  echo: false
+---
+
+```{r}
+#| echo: FALSE
+#| output: FALSE
+# Load necessary libraries
+library(tidyverse)
+library(tidyr)
+library(dplyr)
+library(readr)
+```
+
+```{r}
+#| output: FALSE
+# Read the data
+data <- "C:/Users/liuyu/Downloads/UsersdkaneDesktopprojects/plastic-pollution/1- global-plastics-production.csv" |>
+  read_csv()
+
+# Rename columns for easier access
+colnames(data) <- c("Entity", "Code", "Year", "Production")
+```
+
+```{r}
+# Plot the data
+p <- ggplot(data, aes(x = Year, y = Production)) +
+  geom_point(color = 'blue', alpha = 0.6) +
+  labs(title = "Yearly Plastic Production with Trendline and Forecast",
+  x = "Year",
+  y = "Production") +
+  theme_minimal()
+
+# Fit a model
+model <- lm(Production ~ poly(Year, 2, raw = TRUE), data = data)
+
+# Add the trendline to the plot
+p <- p + geom_smooth(method = "lm", formula = y ~ poly(x, 2, raw = TRUE), se = FALSE, color = "red")
+
+# Forecast future values
+future_years <- data.frame(Year = seq(2020, 2030))
+future_values <- predict(model, newdata = future_years)
+future_data <- data.frame(Year = future_years$Year, Production = future_values)
+
+# Add the forecast to the plot
+p <- p + geom_line(data = future_data, aes(x = Year, y = Production), color = "red", linetype = "dashed")
+```
+
+```{r}
+# Print the plot
+print(p)
+```

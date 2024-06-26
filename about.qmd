@@ -2,6 +2,8 @@
 title: "About"
 ---
 
-Author: Melody Liu (melody.yuemeng.liu@gmail.com)
-[Github repo](https://github.com/mliu-13/plastic-pollution)
-[Kane's Free Data Science Course](https://bootcamp.davidkane.info/)
+My name is **Melody Liu**, and I am a middle school student in Ontario, Canada. Contact me [here!](melody.yuemeng.liu@gmail.com) (melody.yuemeng.liu@gmail.com)
+
+My project was created to represent **plastic pollution** throughout the world and over the years. Find my Gihtub repo for this project [here!](https://github.com/mliu-13/plastic-pollution) (https://github.com/mliu-13/plastic-pollution)
+
+This project was part of [**Kane's Free Data Science Course**.](https://bootcamp.davidkane.info/) Find more information about this course [here!](https://bootcamp.davidkane.info/)

@@ -1,11 +1,10 @@
 ---
-title: "Global Plastics Production"
+title: "Home"
 ---
 
-Global plastics production has increased over the past few decades. This data was pulled from "Ourworldindata.org", by Hannah Ritchie, Veronika Samborska and Max Roser. Then, the relevant data frames were joined to analyze the global plastics production over the years and forecast future production. Global plastics production has been increasing at a rapid pace.
-
 ```{r}
-echo: FALSE
+#| echo: FALSE
+#| output: FALSE
 # Load necessary libraries
 library(tidyverse)
 library(tidyr)
@@ -13,43 +12,4 @@ library(dplyr)
 library(readr)
 ```
 
-```{r}
-# Read the data
-data <- "C:/Users/liuyu/Downloads/UsersdkaneDesktopprojects/plastic-pollution/1- global-plastics-production.csv" |>
-  read_csv()
-
-# Rename columns for easier access
-colnames(data) <- c("Entity", "Code", "Year", "Production")
-print(data)
-```
-
-```{r}
-# Plot the data
-p <- ggplot(data, aes(x = Year, y = Production)) +
-  geom_point(color = 'blue', alpha = 0.6) +
-  ggtitle("Yearly Plastic Production with Trendline and Forecast") +
-  xlab("Year") +
-  ylab("Production") +
-  theme_minimal()
-
-# Fit a model
-model <- lm(Production ~ poly(Year, 2, raw = TRUE), data = data)
-
-# Add the trendline to the plot
-p <- p + geom_smooth(method = "lm", formula = y ~ poly(x, 2, raw = TRUE), se = FALSE, color = "red")
-
-# Forecast future values
-future_years <- data.frame(Year = seq(2020, 2030))
-future_values <- predict(model, newdata = future_years)
-future_data <- data.frame(Year = future_years$Year, Production = future_values)
-
-# Add the forecast to the plot
-p <- p + geom_line(data = future_data, aes(x = Year, y = Production), color = "red", linetype = "dashed")
-```
-
-```{r}
-# Print the plot
-print(p)
-```
-
-Global plastics production has increased over the past few decades. This data was pulled from "Ourworldindata.org", by Hannah Ritchie, Veronika Samborska and Max Roser. Then, the relevant data frames were joined to analyze the global plastics production over the years and forecast future production. Global plastics production has been increasing at a rapid pace.
+Plastic pollution kills up to 1 million people each year. This project looks at plastic production and pollution. I used data pulled from [here](https://ourworldindata.org/) (https://ourworldindata.org/), by Hannah Ritchie, Veronika Samborska and Max Roser. The relevant data frames were joined to analyze information about plastic around the world. Global production has been increasing at a rapid pace, and is predicted to continue doing so.
