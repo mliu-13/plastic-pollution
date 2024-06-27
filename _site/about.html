@@ -96,6 +96,25 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./about.html" aria-current="page"> 
 <span class="menu-text">About</span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-graphs" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Graphs</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-graphs">    
+        <li>
+    <a class="dropdown-item" href="./global-plastics-production.html">
+ <span class="dropdown-text">Global Plastics Production</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./share-of-global-plastic-waste-emitted-to-the-ocean.html">
+ <span class="dropdown-text">Share of Global Plastic Waste Emitted to the Ocean</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./share-plastic-fate.html">
+ <span class="dropdown-text">Share Plastic Fate</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
@@ -220,7 +239,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/mliu\.quarto\.pub\/plastic-pollution");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

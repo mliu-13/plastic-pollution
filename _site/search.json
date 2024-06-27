@@ -12,19 +12,5 @@
     "title": "Home",
     "section": "",
     "text": "Plastic pollution kills up to 1 million people each year. This project looks at plastic production and pollution. I used data pulled from here (https://ourworldindata.org/), by Hannah Ritchie, Veronika Samborska and Max Roser. The relevant data frames were joined to analyze information about plastic around the world. Global production has been increasing at a rapid pace, and is predicted to continue doing so."
-  },
-  {
-    "objectID": "global-plastics-production.html",
-    "href": "global-plastics-production.html",
-    "title": "Global Plastics Production",
-    "section": "",
-    "text": "Plastic pollution kills up to 1 million people each year. This project used data pulled from “Ourworldindata.org”, by Hannah Ritchie, Veronika Samborska and Max Roser. The relevant data frames were joined to analyze information about plastic around the world. Global production has been increasing at a rapid pace, and is predicted to continue doing so."
-  },
-  {
-    "objectID": "share-of-global-plastic-waste-emitted-to-the-ocean.html",
-    "href": "share-of-global-plastic-waste-emitted-to-the-ocean.html",
-    "title": "Share of Global Plastic Waste Emitted to the Ocean",
-    "section": "",
-    "text": "Rows: 170 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): Entity, Code\ndbl (2): Year, Share of global plastics emitted to ocean\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n# A tibble: 170 × 4\n   Entity              Code   Year `Share of global plastics emitted to ocean`\n   &lt;chr&gt;               &lt;chr&gt; &lt;dbl&gt;                                       &lt;dbl&gt;\n 1 Africa              &lt;NA&gt;   2019                                    7.99    \n 2 Albania             ALB    2019                                    0.160   \n 3 Algeria             DZA    2019                                    0.590   \n 4 Angola              AGO    2019                                    0.0878  \n 5 Antigua and Barbuda ATG    2019                                    0.000204\n 6 Argentina           ARG    2019                                    0.422   \n 7 Asia                &lt;NA&gt;   2019                                   81.0     \n 8 Australia           AUS    2019                                    0.00327 \n 9 Bahamas             BHS    2019                                    0.00204 \n10 Bahrain             BHR    2019                                    0       \n# ℹ 160 more rows"
   }
 ]

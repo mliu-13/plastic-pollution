@@ -15,6 +15,30 @@ library(readr)
 ```
 
 ```{r}
-"C:/Users/liuyu/Downloads/UsersdkaneDesktopprojects/plastic-pollution/2- share-of-global-plastic-waste-emitted-to-the-ocean.csv" |>
+#| output: FALSE
+# Read the data
+data <- "C:/Users/liuyu/Downloads/UsersdkaneDesktopprojects/plastic-pollution/2- share-of-global-plastic-waste-emitted-to-the-ocean.csv" |>
   read_csv()
+
+# Filter the data for the top 5 entities with the highest share of global plastics emitted to ocean
+top_entities <- data %>%
+  filter(Year == 2019) %>%
+  arrange(desc(`Share of global plastics emitted to ocean`)) %>%
+  slice(1:5)
+```
+
+```{r}
+# Create the bar chart
+p <- ggplot(top_entities, aes(x = reorder(Entity, `Share of global plastics emitted to ocean`), y = `Share of global plastics emitted to ocean`, fill = Entity)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  xlab("Entity") +
+  ylab("Share of global plastics emitted to ocean") +
+  ggtitle("Top 5 Entities by Share of Global Plastics Emitted to Ocean in 2019") +
+  theme_minimal()
+```
+
+```{r}
+# Print the plot
+print(p)
 ```

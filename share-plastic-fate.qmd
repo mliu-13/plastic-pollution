@@ -1,0 +1,44 @@
+---
+title: "Share Plastic Fate"
+execute: 
+  echo: false
+---
+
+```{r}
+#| echo: FALSE
+#| output: FALSE
+# Load necessary libraries
+library(tidyverse)
+library(tidyr)
+library(dplyr)
+library(readr)
+```
+
+```{r}
+#| output: FALSE
+# Read the data
+data <- "C:/Users/liuyu/Downloads/UsersdkaneDesktopprojects/plastic-pollution/3- share-plastic-fate.csv" |>
+  read_csv()
+
+# Calculate the average incinerated waste for each year
+average_incinerated <- data %>%
+  group_by(Year) %>%
+  summarize(Average_Incinerated_Waste = mean(`Share of waste incinerated from total regional waste`, na.rm = TRUE))
+```
+
+```{r}
+p <- ggplot(average_incinerated, aes(x = Year, y = Average_Incinerated_Waste)) +
+  geom_point(color = 'blue', alpha = 0.6) +
+  geom_line(color = 'blue', alpha = 0.6) +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black", show.legend = FALSE) +
+  ggtitle("Yearly Average Incinerated Waste") +
+  xlab("Year") +
+  ylab("Average Incinerated Waste") +
+  theme_minimal()
+```
+
+```{r}
+# Print the plot
+print(p)
+```
+

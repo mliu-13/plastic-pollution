@@ -12,6 +12,10 @@ website:
         menu:
           - href: global-plastics-production.qmd
             text: Global Plastics Production
+          - href: share-of-global-plastic-waste-emitted-to-the-ocean.qmd
+            text: Share of Global Plastic Waste Emitted to the Ocean
+          - href: share-plastic-fate.qmd
+            text: Share Plastic Fate
 
 format:
   html:
